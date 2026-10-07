@@ -1,0 +1,40 @@
+[package]
+name = "soloist-mpris"
+version = "0.1.0"
+edition = "2024"
+description = "MPRIS D-Bus server exposing Spotify's headless client (soloist) to the desktop"
+license = "MIT"
+repository = "https://github.com/qehwi/soloist-mpris/tree/master"
+
+[dependencies]
+futures-util = "0.3.34"
+mpris-server = { version = "0.10.0", features = ["tokio"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+thiserror = "2.0.20"
+tokio = { version = "1.53.1", features = ["full"] }
+tokio-tungstenite = "0.30.0"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
+[lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+unwrap_used = "warn"
+expect_used = "warn"
+indexing_slicing = "warn"
+arithmetic_side_effects = "warn"
+unreachable = "warn"
+unimplemented = "warn"
+unchecked_time_subtraction = "warn"
+todo = "warn"
+dbg_macro = "warn"
+string_slice = "warn"
+panic_in_result_fn = "warn"
+panic = "warn"
+exit = "warn"
+as_conversions = "warn"
